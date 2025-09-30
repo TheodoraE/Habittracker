@@ -1,0 +1,70 @@
+body {
+    background-image: url('../img/glitch.png');
+    /* background-size: cover; */
+    background-color: #eba4c5;
+    font-family: 'Share Tech', sans-serif;
+    text-align: center;
+}
+
+#title {
+    margin-top: 100px;
+    line-height: 10px;
+}
+
+#subtitle {
+    opacity: 0.7;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#calendarContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#calendarDiv {
+    background-color: #fff0c1;
+    opacity: 0.80;
+    border-radius: 10px 10px 20px 20px;
+    margin: auto;
+    align-content: center;
+    text-align: center;
+}
+
+#calendarHeading {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid black;
+    padding: 0px 20px;
+    font-size: 20px;
+    background-color: aquamarine;
+    line-height: 0px;
+}
+
+#calendarContent {
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.days {
+    display: flex;
+}
+
+.day {
+    width: 30px;
+    margin: 3px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 20px;
+    /* background-color: aquamarine; */
+}
+
+/* Button */
+#resetButton {
+    margin: 1%;
+}
+
+/* References */
+/* https://www.youtube.com/watch?v=-OcVVgDLI3U */
