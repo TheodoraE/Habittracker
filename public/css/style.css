@@ -22,6 +22,16 @@ body {
     justify-content: center;
 }
 
+#calendarContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#calendarContainer {
+    display: flex;
+    justify-content: center;
+}
+
 #calendarDiv {
     background-color: #fff0c1;
     opacity: 0.80;
@@ -51,6 +61,7 @@ body {
     display: flex;
 }
 
+/* Desktop + Tablet */
 .day {
     width: 30px;
     margin: 3px;
@@ -58,12 +69,23 @@ body {
     font-size: 15px;
     text-align: center;
     border-radius: 20px;
-    /* background-color: aquamarine; */
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .day {
+        width: 25px;
+        margin: 3px;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 20px;
+    }
 }
 
 /* Button */
 #resetButton {
-    margin: 1%;
+    margin: 3%;
 }
 
 /* References */
