@@ -31,14 +31,24 @@ let months = [
 let title = document.getElementById("title");
 title.innerHTML = `&#128160;${months[currentMonth]}&#128160;`;
 
-// Update the calendar info
+// Update the calendar info - Habit Title
 let habitTitle = document.getElementById("habitTitle");
+let habit = localStorage.getItem("habit");
+    //Keeping the habit title even after refresh page
+if (habit === '') {
+    habitTitle.innerHTML = "Click to set your habit";
+} else {
+    habitTitle.innerHTML = habit;
+}
+    //Setting the habit onClick
 habitTitle.onclick = () => {
 
     let habits = prompt("What\'s your habit?", habitTitle.innerHTML);
     if(habits.length == 0){
+        habit = localStorage.setItem("habit", "Click to set your habit");
         habitTitle.innerHTML = "Click to set your habit";
     }else{
+        habit = localStorage.setItem("habit", habits);
         habitTitle.innerHTML = habits;
     }
 }
@@ -145,4 +155,5 @@ resetButton.onclick = () => {
     }
     daysCompleted = 0;
     totalDays.innerHTML = `${daysCompleted}/${daysInThisMonth}`;
+    habitTitle.innerHTML = "Click to set your habit";
 };
