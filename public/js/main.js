@@ -35,7 +35,9 @@ title.innerHTML = `&#128160;${months[currentMonth]}&#128160;`;
 let habitTitle = document.getElementById("habitTitle");
 let habit = localStorage.getItem("habit");
     //Keeping the habit title even after refresh page
-if (habit === '') {
+if (habitTitle.innerHTML === 'Click to set your habit') {
+    habit = localStorage.setItem("habit", "Click to set your habit");
+} else if (habit === '') {
     habitTitle.innerHTML = "Click to set your habit";
 } else {
     habitTitle.innerHTML = habit;
