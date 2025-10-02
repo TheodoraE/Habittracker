@@ -34,14 +34,7 @@ title.innerHTML = `&#128160;${months[currentMonth]}&#128160;`;
 // Update the calendar info - Habit Title
 let habitTitle = document.getElementById("habitTitle");
 let habit = localStorage.getItem("habit");
-    //Keeping the habit title even after refresh page
-if (habitTitle.innerHTML === 'Click to set your habit') {
-    habit = localStorage.setItem("habit", "Click to set your habit");
-} else if (habit === '') {
-    habitTitle.innerHTML = "Click to set your habit";
-} else {
-    habitTitle.innerHTML = habit;
-}
+
     //Setting the habit onClick
 habitTitle.onclick = () => {
 
@@ -54,6 +47,14 @@ habitTitle.onclick = () => {
         habitTitle.innerHTML = habits;
     }
 }
+    //Keeping the habit title even after refresh page
+if (habit === null) {
+    habit = localStorage.setItem("habit", "Click to set your habit");
+    habitTitle.innerHTML = habit;
+} else {
+    habitTitle.innerHTML = localStorage.getItem("habit");
+}
+console.log(`habit: ${habit}`);
 
 // Set the total days
 let daysInTheMonthList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -92,9 +93,9 @@ for (let i = 0; i < days.length; i++) {
 let completed = new Array(31);
 for (let i = 0; i < dayCount; i++) {
     var tempString = `${currentMonth + 1}-${i + 1}-${currentYear}`;
-    console.log(`storing date: ${tempString}`);
+    //console.log(`storing date: ${tempString}`);
     var tempDay = localStorage.getItem(tempString);
-    console.log(tempDay);
+    //console.log(tempDay);
     if (tempDay == null || tempDay == "false") {
         localStorage.setItem(tempString, false);
     } else if (tempDay == "true") {
@@ -102,8 +103,8 @@ for (let i = 0; i < dayCount; i++) {
     }
     totalDays.innerHTML = `${daysCompleted}/${daysInThisMonth}`;
 }
-console.log(`completed array: ${completed}`);
-console.log(`total days completed: ${daysCompleted}`);
+//console.log(`completed array: ${completed}`);
+//console.log(`total days completed: ${daysCompleted}`);
 
 // Check storage and update completed array
 for (let i = 0; i < currentDate; i++) {
@@ -111,7 +112,7 @@ for (let i = 0; i < currentDate; i++) {
     console.log(tempString);
 
     var chosenDay = localStorage.getItem(tempString);
-    console.log(`${i +1}: ${chosenDay}`);
+//    console.log(`${i +1}: ${chosenDay}`);
     var chosenDayDiv = document.getElementById(`day${i + 1}`);
     if (chosenDay === "true") {
         chosenDayDiv.style.backgroundColor = "aquamarine";
