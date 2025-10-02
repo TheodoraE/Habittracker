@@ -50,7 +50,7 @@ habitTitle.onclick = () => {
     //Keeping the habit title even after refresh page
 if (habit === null) {
     habit = localStorage.setItem("habit", "Click to set your habit");
-    habitTitle.innerHTML = habit;
+    habitTitle.innerHTML = "Click to set your habit";
 } else {
     habitTitle.innerHTML = localStorage.getItem("habit");
 }
